@@ -8,14 +8,14 @@
     "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "me",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "moment-timezone": "^0.5.43",
-    "mongoose": "^7.0.4",
+    "mongoose": "^6.10.1",
     "nodemon": "^2.0.22"
   }
 }
