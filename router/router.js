@@ -6,15 +6,15 @@ const User = require('../model/userSchema');
 const Data = require('../model/dataSchema');
 const SwitchData = require('../model/inputSchema')
 
-let teleData = {
-  var1 : 0,
-  var2 : 0,
-  var3 : 0,
-  var4 : 0, 
-  var5 : 0,
-  date : '',
-  user : ''
-}
+// let teleData = {
+//   var1 : 0,
+//   var2 : 0,
+//   var3 : 0,
+//   var4 : 0, 
+//   var5 : 0,
+//   date : '',
+//   user : ''
+// }
 
 let teleInput = {
   var1 : '0',
@@ -154,17 +154,9 @@ router.get('/getdata', (req, res) => {
       });
   });
 
-  const getDocument = async (date) => {
+  const getDocument = async (date, user) => {
     try {
-      const data = await Data.find({date : `${date}`}).limit(10000);
-      return data;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  const getDocument2 = async () => {
-    try {
-      const data = await Data.find({}).limit(1000);
+      const data = await Data.find({date : `${date}`, user : user}).limit(10000);
       return data;
     } catch (error) {
       console.error(error);
@@ -173,15 +165,15 @@ router.get('/getdata', (req, res) => {
 
   router.get('/api/data', async (req, res) => {
 
-    const { fileName } = req.query;
-    const data = await getDocument(fileName);
+    const { fileName, userName } = req.query;
+    const data = await getDocument(fileName, userName );
     res.json(data);
   });
 
   router.get('/api/brush', async (req, res) => {
 
-    const { fileName } = req.query;
-    const data = await getDocument(fileName);
+    const { fileName, userName } = req.query;
+    const data = await getDocument(fileName, userName);
     res.json(data);
   });
 

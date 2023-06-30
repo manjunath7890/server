@@ -61,7 +61,10 @@ const dataSchema = new mongoose.Schema({
   var58: Number,
   var59: Number,
   var60: Number,
-  date: String,
+  date: {
+    type: Date,
+    default: () => new Date().toISOString().slice(0, 10)
+  },
   user: String,
   timestamp: {
     type: Date,
