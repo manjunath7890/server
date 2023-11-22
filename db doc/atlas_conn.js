@@ -1,8 +1,8 @@
 // add atlas req along with url
 
 const mongoose = require('mongoose');
-const db = process.env.db;
-// const db = "mongodb+srv://flyingfortress289:flyingfortress289@cluster0.zlhd1zd.mongodb.net/?retryWrites=true&w=majority";
+// const db = process.env.db;
+const db = "mongodb+srv://flyingfortress289:flyingfortress289@cluster0.zlhd1zd.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(db, {
     useNewUrlParser: true,
