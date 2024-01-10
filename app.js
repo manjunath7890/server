@@ -2,6 +2,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const express = require('express');
 const expressWs = require('express-ws');
+const fetch = require('node-fetch');
 const app = express();
 expressWs(app);
 

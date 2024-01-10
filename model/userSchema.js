@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-      firstName: 'string',
-      lastName: 'string',
+      userName: 'string',
+      role: 'string',
       email: 'string',
       contact: 'string',
-      address: 'string',
-      password: 'string'
+      accessToken: 'string',
+      password: 'string',
   });
 
   const User = mongoose.model('User', userSchema);
